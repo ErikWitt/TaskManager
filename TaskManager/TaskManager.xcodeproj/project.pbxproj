@@ -16,9 +16,25 @@
 		2E02D1A5162974B3003200E8 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E02D1A4162974B3003200E8 /* Default.png */; };
 		2E02D1A7162974B3003200E8 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E02D1A6162974B3003200E8 /* Default@2x.png */; };
 		2E02D1A9162974B3003200E8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E02D1A8162974B3003200E8 /* Default-568h@2x.png */; };
-		2E02D1AC162974B3003200E8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E02D1AB162974B3003200E8 /* ViewController.m */; };
-		2E02D1AF162974B3003200E8 /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E02D1AD162974B3003200E8 /* ViewController_iPhone.xib */; };
-		2E02D1B2162974B3003200E8 /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E02D1B0162974B3003200E8 /* ViewController_iPad.xib */; };
+		2E02D1AC162974B3003200E8 /* TaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E02D1AB162974B3003200E8 /* TaskViewController.m */; };
+		2E02D1AF162974B3003200E8 /* TaskViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E02D1AD162974B3003200E8 /* TaskViewController_iPhone.xib */; };
+		2E02D1BA16297704003200E8 /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E02D1B916297704003200E8 /* Task.m */; };
+		2E02D1BD16297806003200E8 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E02D1BC16297806003200E8 /* MapKit.framework */; };
+		2E02D1BF16297814003200E8 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E02D1BE16297814003200E8 /* CoreLocation.framework */; };
+		2E02D1C316297D64003200E8 /* TaskViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E02D1C116297D64003200E8 /* TaskViewController_iPad.xib */; };
+		2E02D1D116298D97003200E8 /* TaskDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E02D1CF16298D97003200E8 /* TaskDetailViewController.m */; };
+		2E02D1D216298D97003200E8 /* TaskDetailViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E02D1D016298D97003200E8 /* TaskDetailViewController_iPad.xib */; };
+		2E02D1D416298DDD003200E8 /* TaskDetailViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E02D1D316298DDD003200E8 /* TaskDetailViewController_iPhone.xib */; };
+		2E02D1D716299CD8003200E8 /* TaskViewControllerPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E02D1D616299CD8003200E8 /* TaskViewControllerPad.m */; };
+		2E02D1DC16299D5B003200E8 /* TaskViewControllerPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E02D1DB16299D5B003200E8 /* TaskViewControllerPhone.m */; };
+		2E02D1DF1629A2D6003200E8 /* TaskDetailViewControllerPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E02D1DE1629A2D6003200E8 /* TaskDetailViewControllerPhone.m */; };
+		2E02D1E21629A2F2003200E8 /* TaskDetailViewControllerPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E02D1E11629A2F2003200E8 /* TaskDetailViewControllerPad.m */; };
+		2E02D1E71629B301003200E8 /* TaskWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E02D1E51629B301003200E8 /* TaskWebViewController.m */; };
+		2E02D1E81629B301003200E8 /* TaskWebViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E02D1E61629B301003200E8 /* TaskWebViewController_iPhone.xib */; };
+		2E02D1EA1629B32B003200E8 /* TaskWebViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E02D1E91629B32B003200E8 /* TaskWebViewController_iPad.xib */; };
+		2E02D1EF1629B7C9003200E8 /* TaskMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E02D1ED1629B7C9003200E8 /* TaskMapViewController.m */; };
+		2E02D1F01629B7C9003200E8 /* TaskMapViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E02D1EE1629B7C9003200E8 /* TaskMapViewController_iPhone.xib */; };
+		2E02D1F41629B80B003200E8 /* TaskMapViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E02D1F31629B80B003200E8 /* TaskMapViewController_iPad.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,10 +51,34 @@
 		2E02D1A4162974B3003200E8 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		2E02D1A6162974B3003200E8 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		2E02D1A8162974B3003200E8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		2E02D1AA162974B3003200E8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		2E02D1AB162974B3003200E8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		2E02D1AE162974B3003200E8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
-		2E02D1B1162974B3003200E8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
+		2E02D1AA162974B3003200E8 /* TaskViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TaskViewController.h; sourceTree = "<group>"; };
+		2E02D1AB162974B3003200E8 /* TaskViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TaskViewController.m; sourceTree = "<group>"; };
+		2E02D1AE162974B3003200E8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TaskViewController_iPhone.xib; sourceTree = "<group>"; };
+		2E02D1B816297704003200E8 /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
+		2E02D1B916297704003200E8 /* Task.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Task.m; sourceTree = "<group>"; };
+		2E02D1BC16297806003200E8 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		2E02D1BE16297814003200E8 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		2E02D1C216297D64003200E8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TaskViewController_iPad.xib; sourceTree = "<group>"; };
+		2E02D1CE16298D97003200E8 /* TaskDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskDetailViewController.h; sourceTree = "<group>"; };
+		2E02D1CF16298D97003200E8 /* TaskDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskDetailViewController.m; sourceTree = "<group>"; };
+		2E02D1D016298D97003200E8 /* TaskDetailViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskDetailViewController_iPad.xib; sourceTree = "<group>"; };
+		2E02D1D316298DDD003200E8 /* TaskDetailViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskDetailViewController_iPhone.xib; sourceTree = "<group>"; };
+		2E02D1D516299CD8003200E8 /* TaskViewControllerPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskViewControllerPad.h; sourceTree = "<group>"; };
+		2E02D1D616299CD8003200E8 /* TaskViewControllerPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskViewControllerPad.m; sourceTree = "<group>"; };
+		2E02D1DA16299D5B003200E8 /* TaskViewControllerPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskViewControllerPhone.h; sourceTree = "<group>"; };
+		2E02D1DB16299D5B003200E8 /* TaskViewControllerPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskViewControllerPhone.m; sourceTree = "<group>"; };
+		2E02D1DD1629A2D6003200E8 /* TaskDetailViewControllerPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskDetailViewControllerPhone.h; sourceTree = "<group>"; };
+		2E02D1DE1629A2D6003200E8 /* TaskDetailViewControllerPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskDetailViewControllerPhone.m; sourceTree = "<group>"; };
+		2E02D1E01629A2F2003200E8 /* TaskDetailViewControllerPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskDetailViewControllerPad.h; sourceTree = "<group>"; };
+		2E02D1E11629A2F2003200E8 /* TaskDetailViewControllerPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskDetailViewControllerPad.m; sourceTree = "<group>"; };
+		2E02D1E41629B301003200E8 /* TaskWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskWebViewController.h; sourceTree = "<group>"; };
+		2E02D1E51629B301003200E8 /* TaskWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskWebViewController.m; sourceTree = "<group>"; };
+		2E02D1E61629B301003200E8 /* TaskWebViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskWebViewController_iPhone.xib; sourceTree = "<group>"; };
+		2E02D1E91629B32B003200E8 /* TaskWebViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskWebViewController_iPad.xib; sourceTree = "<group>"; };
+		2E02D1EC1629B7C9003200E8 /* TaskMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskMapViewController.h; sourceTree = "<group>"; };
+		2E02D1ED1629B7C9003200E8 /* TaskMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskMapViewController.m; sourceTree = "<group>"; };
+		2E02D1EE1629B7C9003200E8 /* TaskMapViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskMapViewController_iPhone.xib; sourceTree = "<group>"; };
+		2E02D1F31629B80B003200E8 /* TaskMapViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskMapViewController_iPad.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +86,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E02D1BF16297814003200E8 /* CoreLocation.framework in Frameworks */,
+				2E02D1BD16297806003200E8 /* MapKit.framework in Frameworks */,
 				2E02D193162974B3003200E8 /* UIKit.framework in Frameworks */,
 				2E02D195162974B3003200E8 /* Foundation.framework in Frameworks */,
 				2E02D197162974B3003200E8 /* CoreGraphics.framework in Frameworks */,
@@ -58,6 +100,8 @@
 		2E02D183162974B3003200E8 = {
 			isa = PBXGroup;
 			children = (
+				2E02D1BE16297814003200E8 /* CoreLocation.framework */,
+				2E02D1BC16297806003200E8 /* MapKit.framework */,
 				2E02D198162974B3003200E8 /* TaskManager */,
 				2E02D191162974B3003200E8 /* Frameworks */,
 				2E02D18F162974B3003200E8 /* Products */,
@@ -85,12 +129,10 @@
 		2E02D198162974B3003200E8 /* TaskManager */ = {
 			isa = PBXGroup;
 			children = (
+				2E02D1BB1629770A003200E8 /* Model */,
+				2E02D1C016297C21003200E8 /* Controller */,
 				2E02D1A1162974B3003200E8 /* AppDelegate.h */,
 				2E02D1A2162974B3003200E8 /* AppDelegate.m */,
-				2E02D1AA162974B3003200E8 /* ViewController.h */,
-				2E02D1AB162974B3003200E8 /* ViewController.m */,
-				2E02D1AD162974B3003200E8 /* ViewController_iPhone.xib */,
-				2E02D1B0162974B3003200E8 /* ViewController_iPad.xib */,
 				2E02D199162974B3003200E8 /* Supporting Files */,
 			);
 			path = TaskManager;
@@ -108,6 +150,78 @@
 				2E02D1A8162974B3003200E8 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2E02D1BB1629770A003200E8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2E02D1B816297704003200E8 /* Task.h */,
+				2E02D1B916297704003200E8 /* Task.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		2E02D1C016297C21003200E8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2E02D1D816299CE0003200E8 /* TaskViewController */,
+				2E02D1D916299CF3003200E8 /* TaskDetailViewController */,
+				2E02D1E31629B289003200E8 /* TaskWebViewController */,
+				2E02D1EB1629B799003200E8 /* TaskMapViewController */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		2E02D1D816299CE0003200E8 /* TaskViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2E02D1AA162974B3003200E8 /* TaskViewController.h */,
+				2E02D1AB162974B3003200E8 /* TaskViewController.m */,
+				2E02D1DA16299D5B003200E8 /* TaskViewControllerPhone.h */,
+				2E02D1DB16299D5B003200E8 /* TaskViewControllerPhone.m */,
+				2E02D1AD162974B3003200E8 /* TaskViewController_iPhone.xib */,
+				2E02D1D516299CD8003200E8 /* TaskViewControllerPad.h */,
+				2E02D1D616299CD8003200E8 /* TaskViewControllerPad.m */,
+				2E02D1C116297D64003200E8 /* TaskViewController_iPad.xib */,
+			);
+			name = TaskViewController;
+			sourceTree = "<group>";
+		};
+		2E02D1D916299CF3003200E8 /* TaskDetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2E02D1CE16298D97003200E8 /* TaskDetailViewController.h */,
+				2E02D1CF16298D97003200E8 /* TaskDetailViewController.m */,
+				2E02D1DD1629A2D6003200E8 /* TaskDetailViewControllerPhone.h */,
+				2E02D1DE1629A2D6003200E8 /* TaskDetailViewControllerPhone.m */,
+				2E02D1D316298DDD003200E8 /* TaskDetailViewController_iPhone.xib */,
+				2E02D1E01629A2F2003200E8 /* TaskDetailViewControllerPad.h */,
+				2E02D1E11629A2F2003200E8 /* TaskDetailViewControllerPad.m */,
+				2E02D1D016298D97003200E8 /* TaskDetailViewController_iPad.xib */,
+			);
+			name = TaskDetailViewController;
+			sourceTree = "<group>";
+		};
+		2E02D1E31629B289003200E8 /* TaskWebViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2E02D1E41629B301003200E8 /* TaskWebViewController.h */,
+				2E02D1E51629B301003200E8 /* TaskWebViewController.m */,
+				2E02D1E61629B301003200E8 /* TaskWebViewController_iPhone.xib */,
+				2E02D1E91629B32B003200E8 /* TaskWebViewController_iPad.xib */,
+			);
+			name = TaskWebViewController;
+			sourceTree = "<group>";
+		};
+		2E02D1EB1629B799003200E8 /* TaskMapViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2E02D1EC1629B7C9003200E8 /* TaskMapViewController.h */,
+				2E02D1ED1629B7C9003200E8 /* TaskMapViewController.m */,
+				2E02D1EE1629B7C9003200E8 /* TaskMapViewController_iPhone.xib */,
+				2E02D1F31629B80B003200E8 /* TaskMapViewController_iPad.xib */,
+			);
+			name = TaskMapViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,8 +279,14 @@
 				2E02D1A5162974B3003200E8 /* Default.png in Resources */,
 				2E02D1A7162974B3003200E8 /* Default@2x.png in Resources */,
 				2E02D1A9162974B3003200E8 /* Default-568h@2x.png in Resources */,
-				2E02D1AF162974B3003200E8 /* ViewController_iPhone.xib in Resources */,
-				2E02D1B2162974B3003200E8 /* ViewController_iPad.xib in Resources */,
+				2E02D1AF162974B3003200E8 /* TaskViewController_iPhone.xib in Resources */,
+				2E02D1C316297D64003200E8 /* TaskViewController_iPad.xib in Resources */,
+				2E02D1D216298D97003200E8 /* TaskDetailViewController_iPad.xib in Resources */,
+				2E02D1D416298DDD003200E8 /* TaskDetailViewController_iPhone.xib in Resources */,
+				2E02D1E81629B301003200E8 /* TaskWebViewController_iPhone.xib in Resources */,
+				2E02D1EA1629B32B003200E8 /* TaskWebViewController_iPad.xib in Resources */,
+				2E02D1F01629B7C9003200E8 /* TaskMapViewController_iPhone.xib in Resources */,
+				2E02D1F41629B80B003200E8 /* TaskMapViewController_iPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,7 +299,15 @@
 			files = (
 				2E02D19F162974B3003200E8 /* main.m in Sources */,
 				2E02D1A3162974B3003200E8 /* AppDelegate.m in Sources */,
-				2E02D1AC162974B3003200E8 /* ViewController.m in Sources */,
+				2E02D1AC162974B3003200E8 /* TaskViewController.m in Sources */,
+				2E02D1BA16297704003200E8 /* Task.m in Sources */,
+				2E02D1D116298D97003200E8 /* TaskDetailViewController.m in Sources */,
+				2E02D1D716299CD8003200E8 /* TaskViewControllerPad.m in Sources */,
+				2E02D1DC16299D5B003200E8 /* TaskViewControllerPhone.m in Sources */,
+				2E02D1DF1629A2D6003200E8 /* TaskDetailViewControllerPhone.m in Sources */,
+				2E02D1E21629A2F2003200E8 /* TaskDetailViewControllerPad.m in Sources */,
+				2E02D1E71629B301003200E8 /* TaskWebViewController.m in Sources */,
+				2E02D1EF1629B7C9003200E8 /* TaskMapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,20 +322,20 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		2E02D1AD162974B3003200E8 /* ViewController_iPhone.xib */ = {
+		2E02D1AD162974B3003200E8 /* TaskViewController_iPhone.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				2E02D1AE162974B3003200E8 /* en */,
 			);
-			name = ViewController_iPhone.xib;
+			name = TaskViewController_iPhone.xib;
 			sourceTree = "<group>";
 		};
-		2E02D1B0162974B3003200E8 /* ViewController_iPad.xib */ = {
+		2E02D1C116297D64003200E8 /* TaskViewController_iPad.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				2E02D1B1162974B3003200E8 /* en */,
+				2E02D1C216297D64003200E8 /* en */,
 			);
-			name = ViewController_iPad.xib;
+			name = TaskViewController_iPad.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -306,6 +434,7 @@
 				2E02D1B7162974B3003200E8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

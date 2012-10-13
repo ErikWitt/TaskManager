@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Task.h"
 
-@interface ViewController : UIViewController
+@interface TaskViewController : UIViewController
+
+- (void) taskDidChange:(Task*) task;
 
 @end

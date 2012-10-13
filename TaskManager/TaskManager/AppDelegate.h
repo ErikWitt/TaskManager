@@ -8,12 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@class ViewController;
+@class TaskViewController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
-@property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) UIWindow* window;
 
-@property (strong, nonatomic) ViewController *viewController;
+@property (strong, nonatomic) TaskViewController* taskViewController;
+@property (nonatomic) UINavigationController* navigationController;
+@property (nonatomic) UISplitViewController* splitViewController;
 
 @end

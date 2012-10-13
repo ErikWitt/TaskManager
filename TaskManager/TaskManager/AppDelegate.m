@@ -8,20 +8,41 @@
 
 #import "AppDelegate.h"
 
-#import "ViewController.h"
+#import "TaskViewControllerPad.h"
+#import "TaskDetailViewControllerPad.h"
+#import "TaskViewControllerPhone.h"
+
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.navigationController = [[UINavigationController alloc] init];
     // Override point for customization after application launch.
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        self.viewController = [[ViewController alloc] initWithNibName:@"ViewController_iPhone" bundle:nil];
-    } else {
-        self.viewController = [[ViewController alloc] initWithNibName:@"ViewController_iPad" bundle:nil];
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
+    {
+        self.taskViewController = [[TaskViewControllerPhone alloc] init];
+        
+        [self.navigationController pushViewController:self.taskViewController animated:YES];
+        self.window.rootViewController = self.navigationController;
     }
-    self.window.rootViewController = self.viewController;
+    else
+    {
+        TaskDetailViewControllerPad* detailViewController = [[TaskDetailViewControllerPad alloc] init];
+        [self.navigationController pushViewController:detailViewController animated:YES];
+        self.taskViewController = [[TaskViewControllerPad alloc] initWithDetailViewController: detailViewController];
+        
+        UINavigationController* masterNavigationController = [[UINavigationController alloc] init];
+        [masterNavigationController pushViewController:self.taskViewController animated:YES];
+        
+        
+        self.splitViewController = [[UISplitViewController alloc] init];
+        self.splitViewController.viewControllers = [NSArray arrayWithObjects:masterNavigationController, self.navigationController, nil];
+        self.splitViewController.delegate = detailViewController;
+        self.window.rootViewController = self.splitViewController;
+    }
+    
     [self.window makeKeyAndVisible];
     return YES;
 }
