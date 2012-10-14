@@ -30,6 +30,8 @@
 - (IBAction)closeKeyboard:(id)sender;
 
 
+- (IBAction)presentDatePickerView:(id)sender;
+
 @end
 
 @implementation TaskCreateViewController
@@ -46,7 +48,8 @@
         xibName = @"TaskCreateViewController_iPad";
     }
     self = [super initWithNibName:xibName bundle:nil];
-    if (self) {
+    if (self)
+    {
         self.delegate = delegate;
     }
     return self;
@@ -55,6 +58,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+    [tap setCancelsTouchesInView:NO];
+    [self.view addGestureRecognizer:tap];
+    
     
     UIBarButtonItem* saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveButtonClicked)];
     
@@ -81,6 +91,20 @@
     [self closeKeyboard:self.descriptionTextView];
     [self closeKeyboard:self.homepageTextField];
     [self closeKeyboard:self.locationTextField];
+}
+
+-(void) dismissKeyboard
+{
+    [self closeKeyboard:self.nameTextField];
+    [self closeKeyboard:self.dateTextField];
+    [self closeKeyboard:self.descriptionTextView];
+    [self closeKeyboard:self.homepageTextField];
+    [self closeKeyboard:self.locationTextField];
+}
+
+- (IBAction)closeKeyboard:(id)sender
+{
+    [sender resignFirstResponder];
 }
 
 - (void) saveButtonClicked

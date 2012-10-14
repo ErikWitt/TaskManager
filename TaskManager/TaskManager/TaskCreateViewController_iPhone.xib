@@ -267,9 +267,9 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">descriptionTextView</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="489356906"/>
+						<reference key="destination" ref="68305990"/>
 					</object>
-					<int key="connectionID">112</int>
+					<int key="connectionID">207</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
@@ -283,9 +283,9 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">homepageTextField</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="605776506"/>
+						<reference key="destination" ref="236890762"/>
 					</object>
-					<int key="connectionID">113</int>
+					<int key="connectionID">208</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
@@ -464,7 +464,7 @@
 								<reference key="containingView" ref="719044458"/>
 								<int key="scoringType">6</int>
 								<float key="scoringTypeFloat">24</float>
-								<int key="contentType">2</int>
+								<int key="contentType">3</int>
 							</object>
 							<object class="IBNSLayoutConstraint" id="160244580">
 								<reference key="firstItem" ref="605776506"/>
@@ -550,7 +550,7 @@
 								<reference key="firstItem" ref="489356906"/>
 								<int key="firstAttribute">3</int>
 								<int key="relation">0</int>
-								<reference key="secondItem" ref="530679520"/>
+								<reference key="secondItem" ref="261986876"/>
 								<int key="secondAttribute">4</int>
 								<float key="multiplier">1</float>
 								<object class="IBNSLayoutSymbolicConstant" key="constant">
@@ -582,7 +582,7 @@
 								<reference key="firstItem" ref="530679520"/>
 								<int key="firstAttribute">3</int>
 								<int key="relation">0</int>
-								<reference key="secondItem" ref="590977221"/>
+								<reference key="secondItem" ref="772975341"/>
 								<int key="secondAttribute">4</int>
 								<float key="multiplier">1</float>
 								<object class="IBNSLayoutSymbolicConstant" key="constant">
@@ -614,7 +614,7 @@
 								<reference key="firstItem" ref="719044458"/>
 								<int key="firstAttribute">6</int>
 								<int key="relation">0</int>
-								<reference key="secondItem" ref="590977221"/>
+								<reference key="secondItem" ref="772975341"/>
 								<int key="secondAttribute">6</int>
 								<float key="multiplier">1</float>
 								<object class="IBLayoutConstant" key="constant">
@@ -674,8 +674,8 @@
 								<float key="scoringTypeFloat">9</float>
 								<int key="contentType">3</int>
 							</object>
-							<object class="IBNSLayoutConstraint" id="764468399">
-								<reference key="firstItem" ref="590977221"/>
+							<object class="IBNSLayoutConstraint" id="553832924">
+								<reference key="firstItem" ref="772975341"/>
 								<int key="firstAttribute">3</int>
 								<int key="relation">0</int>
 								<reference key="secondItem" ref="719044458"/>
@@ -738,8 +738,8 @@
 						<reference key="parent" ref="719044458"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">30</int>
-						<reference key="object" ref="530679520"/>
+						<int key="objectID">149</int>
+						<reference key="object" ref="261986876"/>
 						<array class="NSMutableArray" key="children">
 							<object class="IBNSLayoutConstraint" id="496236838">
 								<reference key="firstItem" ref="530679520"/>
@@ -765,10 +765,10 @@
 								<int key="secondAttribute">0</int>
 								<float key="multiplier">1</float>
 								<object class="IBLayoutConstant" key="constant">
-									<double key="value">101</double>
+									<double key="value">97</double>
 								</object>
 								<float key="priority">1000</float>
-								<reference key="containingView" ref="530679520"/>
+								<reference key="containingView" ref="261986876"/>
 								<int key="scoringType">3</int>
 								<float key="scoringTypeFloat">9</float>
 								<int key="contentType">1</int>

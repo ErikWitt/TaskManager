@@ -152,6 +152,8 @@
 				79AD23D9162B1CB000D054DB /* DatePickerController */,
 				2E02D1A1162974B3003200E8 /* AppDelegate.h */,
 				2E02D1A2162974B3003200E8 /* AppDelegate.m */,
+				2E02D1BB1629770A003200E8 /* Model */,
+				2E02D1C016297C21003200E8 /* Controller */,
 				2E02D199162974B3003200E8 /* Supporting Files */,
 			);
 			path = TaskManager;
@@ -247,6 +249,7 @@
 		2E1980AF162AFD6A0088B0AC /* TaskCreateViewController */ = {
 			isa = PBXGroup;
 			children = (
+				2E1980B8162B0EBE0088B0AC /* DatePicker */,
 				2E1980B1162AFDF40088B0AC /* TaskCreateViewController.h */,
 				2E1980B2162AFDF40088B0AC /* TaskCreateViewController.m */,
 				2E1980B3162AFDF40088B0AC /* TaskCreateViewController_iPhone.xib */,
