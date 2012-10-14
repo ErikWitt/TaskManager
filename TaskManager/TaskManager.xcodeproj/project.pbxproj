@@ -38,6 +38,9 @@
 		2E1980B4162AFDF40088B0AC /* TaskCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E1980B2162AFDF40088B0AC /* TaskCreateViewController.m */; };
 		2E1980B5162AFDF40088B0AC /* TaskCreateViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E1980B3162AFDF40088B0AC /* TaskCreateViewController_iPhone.xib */; };
 		2E1980B7162AFE1A0088B0AC /* TaskCreateViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E1980B6162AFE1A0088B0AC /* TaskCreateViewController_iPad.xib */; };
+		2E1980BC162B0EDE0088B0AC /* DatePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E1980BA162B0EDE0088B0AC /* DatePickerViewController.m */; };
+		2E1980BF162B0EF60088B0AC /* DatePickerViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E1980BE162B0EF60088B0AC /* DatePickerViewController_iPad.xib */; };
+		2E1980C1162B0F530088B0AC /* DatePickerViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E1980C0162B0F530088B0AC /* DatePickerViewController_iPhone.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +89,10 @@
 		2E1980B2162AFDF40088B0AC /* TaskCreateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskCreateViewController.m; sourceTree = "<group>"; };
 		2E1980B3162AFDF40088B0AC /* TaskCreateViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskCreateViewController_iPhone.xib; sourceTree = "<group>"; };
 		2E1980B6162AFE1A0088B0AC /* TaskCreateViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskCreateViewController_iPad.xib; sourceTree = "<group>"; };
+		2E1980B9162B0EDE0088B0AC /* DatePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatePickerViewController.h; sourceTree = "<group>"; };
+		2E1980BA162B0EDE0088B0AC /* DatePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatePickerViewController.m; sourceTree = "<group>"; };
+		2E1980BE162B0EF60088B0AC /* DatePickerViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DatePickerViewController_iPad.xib; sourceTree = "<group>"; };
+		2E1980C0162B0F530088B0AC /* DatePickerViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DatePickerViewController_iPhone.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,10 +143,10 @@
 		2E02D198162974B3003200E8 /* TaskManager */ = {
 			isa = PBXGroup;
 			children = (
-				2E02D1BB1629770A003200E8 /* Model */,
-				2E02D1C016297C21003200E8 /* Controller */,
 				2E02D1A1162974B3003200E8 /* AppDelegate.h */,
 				2E02D1A2162974B3003200E8 /* AppDelegate.m */,
+				2E02D1BB1629770A003200E8 /* Model */,
+				2E02D1C016297C21003200E8 /* Controller */,
 				2E02D199162974B3003200E8 /* Supporting Files */,
 			);
 			path = TaskManager;
@@ -235,12 +242,24 @@
 		2E1980AF162AFD6A0088B0AC /* TaskCreateViewController */ = {
 			isa = PBXGroup;
 			children = (
+				2E1980B8162B0EBE0088B0AC /* DatePicker */,
 				2E1980B1162AFDF40088B0AC /* TaskCreateViewController.h */,
 				2E1980B2162AFDF40088B0AC /* TaskCreateViewController.m */,
 				2E1980B3162AFDF40088B0AC /* TaskCreateViewController_iPhone.xib */,
 				2E1980B6162AFE1A0088B0AC /* TaskCreateViewController_iPad.xib */,
 			);
 			name = TaskCreateViewController;
+			sourceTree = "<group>";
+		};
+		2E1980B8162B0EBE0088B0AC /* DatePicker */ = {
+			isa = PBXGroup;
+			children = (
+				2E1980B9162B0EDE0088B0AC /* DatePickerViewController.h */,
+				2E1980BA162B0EDE0088B0AC /* DatePickerViewController.m */,
+				2E1980C0162B0F530088B0AC /* DatePickerViewController_iPhone.xib */,
+				2E1980BE162B0EF60088B0AC /* DatePickerViewController_iPad.xib */,
+			);
+			name = DatePicker;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,6 +327,8 @@
 				2E02D1F41629B80B003200E8 /* TaskMapViewController_iPad.xib in Resources */,
 				2E1980B5162AFDF40088B0AC /* TaskCreateViewController_iPhone.xib in Resources */,
 				2E1980B7162AFE1A0088B0AC /* TaskCreateViewController_iPad.xib in Resources */,
+				2E1980BF162B0EF60088B0AC /* DatePickerViewController_iPad.xib in Resources */,
+				2E1980C1162B0F530088B0AC /* DatePickerViewController_iPhone.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,6 +351,7 @@
 				2E02D1E71629B301003200E8 /* TaskWebViewController.m in Sources */,
 				2E02D1EF1629B7C9003200E8 /* TaskMapViewController.m in Sources */,
 				2E1980B4162AFDF40088B0AC /* TaskCreateViewController.m in Sources */,
+				2E1980BC162B0EDE0088B0AC /* DatePickerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

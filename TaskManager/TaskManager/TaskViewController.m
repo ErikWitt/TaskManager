@@ -25,7 +25,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    CLLocationCoordinate2D location = {0, 0};
+    CLLocationCoordinate2D location = {22, 34};
     
     Task* task = [[Task alloc] initWithName:@"Peter anrufen" Date:[NSDate date] Description:@"Peter sollte ziemlich bald angerufen werden" Coordinates: location andUrl:[NSURL URLWithString:@"http://www.google.com"]];
 

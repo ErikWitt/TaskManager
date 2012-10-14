@@ -9,8 +9,9 @@
 #import "TaskCreateViewController.h"
 #import "Task.h"
 #import <MapKit/MapKit.h>
+#import "DatePickerViewController.h"
 
-@interface TaskCreateViewController ()
+@interface TaskCreateViewController ()<DatePickerViewControllerDelegate>
 
 @property (nonatomic) IBOutlet UITextField* nameTextField;
 @property (nonatomic) IBOutlet UITextField* dateTextField;
@@ -26,6 +27,8 @@
 
 @property (nonatomic, weak) id<TaskCreateViewControllerDelegate> delegate;
 
+
+- (IBAction)presentDatePickerView:(id)sender;
 
 @end
 
@@ -43,7 +46,8 @@
         xibName = @"TaskCreateViewController_iPad";
     }
     self = [super initWithNibName:xibName bundle:nil];
-    if (self) {
+    if (self)
+    {
         self.delegate = delegate;
     }
     return self;
@@ -53,9 +57,30 @@
 {
     [super viewDidLoad];
     
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+    [tap setCancelsTouchesInView:NO];
+    [self.view addGestureRecognizer:tap];
+    
+    
     UIBarButtonItem* saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveButtonClicked)];
     
     [self.navigationItem setRightBarButtonItem:saveButton];
+}
+
+-(void) dismissKeyboard
+{
+    [self closeKeyboard:self.nameTextField];
+    [self closeKeyboard:self.dateTextField];
+    [self closeKeyboard:self.descriptionTextView];
+    [self closeKeyboard:self.homepageTextField];
+    [self closeKeyboard:self.locationTextField];
+}
+
+- (IBAction)closeKeyboard:(id)sender
+{
+    [sender resignFirstResponder];
 }
 
 - (void) saveButtonClicked
@@ -72,5 +97,25 @@
     
     [self.navigationController popViewControllerAnimated:YES];
 }
+
+- (IBAction)presentDatePickerView:(id)sender
+{
+    NSLog(@"peter");
+    DatePickerViewController* controller = [[DatePickerViewController alloc] initWithDelegate:self];
+    
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (void) datePickerViewController:(DatePickerViewController *)controller hasPickedDate:(NSDate *)date
+{
+    self.taskDate = date;
+    
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"dd.MM.yyyy"];
+    
+    self.dateTextField.text = [dateFormat stringFromDate:self.taskDate];;
+}
+
+
 
 @end
