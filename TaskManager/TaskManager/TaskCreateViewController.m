@@ -112,7 +112,7 @@
 {
    
     NSDateFormatter* format = [[NSDateFormatter alloc] init];
-    [format setDateFormat:@"dd.MM.yyyy"];
+    [format setDateFormat:@"dd.MM.yyyy HH:mm"];
     
     NSString* formatiertesDatum = [format stringFromDate:date];
     

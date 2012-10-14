@@ -44,8 +44,18 @@
 {
     [super viewDidLoad];
     
-    MKCoordinateRegion region = {self.task.coodinates,{50,50}};
+    MKCoordinateRegion region = {self.task.coodinates, {0.6, 0.6}};
     
+    
+    
+    MKPointAnnotation* annotation = [[MKPointAnnotation alloc] init];
+    
+    annotation.title = self.task.name;
+    
+    annotation.coordinate = self.task.coodinates;
+    
+    
+    [self.mapView addAnnotation:annotation];
     [self.mapView setRegion:region];
 }
 
