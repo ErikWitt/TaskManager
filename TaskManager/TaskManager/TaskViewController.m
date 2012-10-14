@@ -84,8 +84,15 @@
 
 - (void) taskCreated:(Task *)task
 {
-    [self.tasks addObject:task];
-    [self.taskTableView reloadData];
+ 
+    if(task != nil)
+    {
+        [self.tasks addObject:task];
+        [self.taskTableView reloadData];
+        
+        [self taskDidChange:task];
+    }
+
 }
 
 @end

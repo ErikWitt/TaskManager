@@ -15,11 +15,19 @@
 @property (nonatomic) IBOutlet MKMapView* mapView;
 @property (nonatomic) Task* task;
 
+@property (nonatomic, weak) id<MapViewDelegate> delegate;
+
+@property const BOOL gesture;
+
 @end
 
 @implementation TaskMapViewController
 
-- (TaskMapViewController*) initWithTask: (Task*) task
+
+/*
+ * Standard constructor
+ */
+-(id) initStuff
 {
     NSString* xibName;
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
@@ -31,21 +39,41 @@
         xibName = @"TaskMapViewController_iPad";
     }
     
-    self = [super initWithNibName:xibName bundle:nil];
+    return [super initWithNibName:xibName bundle:nil];
+}
+
+- (TaskMapViewController*) initWithTask: (Task*) task
+{
+       
+    self = [self initStuff];
     if (self)
     {
         self.task = task;
+        self.gesture = NO;
     }
     return self;
 
 }
 
-- (void)viewDidLoad
+- (TaskMapViewController*) initWithDelegate: (id<MapViewDelegate>) delegate
 {
-    [super viewDidLoad];
-    
+   
+    self = [self initStuff];
+    if (self)
+    {
+        self.delegate = delegate;
+        self.gesture = YES;
+    }
+    return self;
+}
+
+
+/*
+ * Pin auf der Karte zeigen
+ */
+-(void) presentPin
+{
     MKCoordinateRegion region = {self.task.coodinates, {0.6, 0.6}};
-    
     
     
     MKPointAnnotation* annotation = [[MKPointAnnotation alloc] init];
@@ -57,6 +85,65 @@
     
     [self.mapView addAnnotation:annotation];
     [self.mapView setRegion:region];
+}
+
+
+
+/*
+ * GestureRecognizer hinzufuegen zum Pin setzen
+ */
+-(void) startGestureRecon
+{
+    
+    CLLocationCoordinate2D coord = {51,11};
+    MKCoordinateRegion region = {coord,{6,7}};
+    [self.mapView setRegion:region];
+    
+    UILongPressGestureRecognizer *longpress = [[UILongPressGestureRecognizer alloc]
+                                          initWithTarget:self action:@selector(addpin:)];
+    longpress.minimumPressDuration = 1.5;
+    
+   // [self.mapView addGestureRecognizer:longpress];
+    [self.view addGestureRecognizer:longpress];
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    
+    if(self.gesture)
+    {
+        [self startGestureRecon];
+    }
+    else
+    {
+        [self presentPin];
+    }
+}
+
+
+-(void) addpin:(UIGestureRecognizer *)gestureRecognizer
+{
+    if (gestureRecognizer.state != UIGestureRecognizerStateBegan)
+        return;
+    
+    CGPoint touchPoint = [gestureRecognizer locationInView:self.mapView];
+    CLLocationCoordinate2D touchMapCoordinate =
+    [self.mapView convertPoint:touchPoint toCoordinateFromView:self.mapView];
+    
+    MKPointAnnotation *annot = [[MKPointAnnotation alloc] init];
+    annot.coordinate = touchMapCoordinate;
+    [self.mapView addAnnotation:annot];
+    
+    // Zeige Fenster
+    
+    
+    
+    [self.delegate mapView:self gotCoordinate:annot.coordinate];
+    
+    [self dismissModalViewControllerAnimated:YES];
+
 }
 
 @end

@@ -20,31 +20,46 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.navigationController = [[UINavigationController alloc] init];
     // Override point for customization after application launch.
+    
+    
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
     {
-        self.taskViewController = [[TaskViewControllerPhone alloc] init];
-        
-        [self.navigationController pushViewController:self.taskViewController animated:YES];
-        self.window.rootViewController = self.navigationController;
+        #define IPHONE ;
+        [self setUpPhone];
     }
     else
     {
-        TaskDetailViewControllerPad* detailViewController = [[TaskDetailViewControllerPad alloc] init];
-        [self.navigationController pushViewController:detailViewController animated:YES];
-        self.taskViewController = [[TaskViewControllerPad alloc] initWithDetailViewController: detailViewController];
         
-        UINavigationController* masterNavigationController = [[UINavigationController alloc] init];
-        [masterNavigationController pushViewController:self.taskViewController animated:YES];
-        
-        
-        self.splitViewController = [[UISplitViewController alloc] init];
-        self.splitViewController.viewControllers = [NSArray arrayWithObjects:masterNavigationController, self.navigationController, nil];
-        self.splitViewController.delegate = detailViewController;
-        self.window.rootViewController = self.splitViewController;
+        [self setUpPad];
     }
     
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+
+-(void) setUpPhone
+{
+    self.taskViewController = [[TaskViewControllerPhone alloc] init];
+    
+    [self.navigationController pushViewController:self.taskViewController animated:YES];
+    self.window.rootViewController = self.navigationController;
+}
+
+-(void) setUpPad
+{
+    TaskDetailViewControllerPad* detailViewController = [[TaskDetailViewControllerPad alloc] init];
+    [self.navigationController pushViewController:detailViewController animated:YES];
+    self.taskViewController = [[TaskViewControllerPad alloc] initWithDetailViewController: detailViewController];
+    
+    UINavigationController* masterNavigationController = [[UINavigationController alloc] init];
+    [masterNavigationController pushViewController:self.taskViewController animated:YES];
+    
+    
+    self.splitViewController = [[UISplitViewController alloc] init];
+    self.splitViewController.viewControllers = [NSArray arrayWithObjects:masterNavigationController, self.navigationController, nil];
+    self.splitViewController.delegate = detailViewController;
+    self.window.rootViewController = self.splitViewController;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

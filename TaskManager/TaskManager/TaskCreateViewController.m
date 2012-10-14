@@ -10,8 +10,9 @@
 #import "Task.h"
 #import <MapKit/MapKit.h>
 #import "DatePickerViewController.h"
+#import "TaskMapViewController.h"
 
-@interface TaskCreateViewController ()<DatepickerDelegate>
+@interface TaskCreateViewController ()<DatepickerDelegate,MapViewDelegate>
 
 @property (nonatomic) IBOutlet UITextField* nameTextField;
 @property (nonatomic) IBOutlet UITextField* dateTextField;
@@ -19,11 +20,10 @@
 @property (nonatomic) IBOutlet UITextField* homepageTextField;
 @property (nonatomic) IBOutlet UITextField* locationTextField;
 
-@property (nonatomic) NSString* taskName;
-@property (nonatomic) NSDate* taskDate;
-@property (nonatomic) NSString* taskDescription;
-@property (nonatomic) NSURL* taskUrl;
-@property (nonatomic) CLLocationCoordinate2D taskLocation;
+
+
+@property (nonatomic) Task* task;
+
 
 @property (nonatomic, weak) id<TaskCreateViewControllerDelegate> delegate;
 
@@ -49,6 +49,8 @@
     if (self)
     {
         self.delegate = delegate;
+        
+        self.task = [[Task alloc] init];
     }
     return self;
 }
@@ -64,8 +66,10 @@
     [self setupGesture];
         
     
+    // Keyboard abschalten für textfelder
     UIView* dummyView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
     self.dateTextField.inputView = dummyView;
+    self.locationTextField.inputView = dummyView;
           
 }
 
@@ -95,9 +99,14 @@
 
 - (void) saveButtonClicked
 {
-    self.taskName = self.nameTextField.text;
-    self.taskDescription = self.descriptionTextView.text;
-    self.taskUrl = [NSURL URLWithString:self.homepageTextField.text];
+    self.task.name = self.nameTextField.text;
+    self.task.description = self.descriptionTextView.text;
+    self.task.url = [NSURL URLWithString:self.homepageTextField.text];
+    // date wird in delegate:datePicked: gesetzt
+    // location wird in mapView:gotCoordinate: gesetzt
+    
+    
+    [self.delegate taskCreated:self.task];
 }
 
 
@@ -106,6 +115,16 @@
     DatePickerViewController* datepicker = [[DatePickerViewController alloc] initWithDelegate:self];
     
     [self presentModalViewController:datepicker animated:YES];
+}
+
+
+-(IBAction) showCoordinateSelection:(id)sender
+{
+    
+    TaskMapViewController* mapv = [[TaskMapViewController alloc] initWithDelegate:self];
+    
+    [self presentModalViewController:mapv animated:YES];
+    
 }
     
 -(void) delegate:(DatePickerViewController *)sender datePicked:(NSDate *)date
@@ -118,8 +137,19 @@
     
     [self.dateTextField setText:formatiertesDatum];
     
+    self.task.date = date;
+    
     [self closeKeyboard:self.dateTextField];
     
+}
+
+-(void) mapView:(TaskMapViewController*) sender gotCoordinate:(CLLocationCoordinate2D) coord
+{
+    self.task.coodinates = coord;
+   
+    self.locationTextField.text = [NSString stringWithFormat:@"%4.2f,%4.2f",coord.latitude,coord.longitude];
+    
+    [self closeKeyboard:self.locationTextField];
 }
 
 

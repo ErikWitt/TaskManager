@@ -18,7 +18,10 @@
 @property (nonatomic) CLLocationCoordinate2D coodinates;
 @property (nonatomic) NSURL* url;
 
-- (Task*) initWithName:(NSString*) name Date: (NSDate*) date Description: (NSString*) description Coordinates: (CLLocationCoordinate2D) coordinates andUrl: (NSURL*) url;
+
+-(Task*) init;
+
+-(Task*) initWithName:(NSString*) name Date: (NSDate*) date Description: (NSString*) description Coordinates: (CLLocationCoordinate2D) coordinates andUrl: (NSURL*) url;
 
 - (NSString*) dateAsString;
 

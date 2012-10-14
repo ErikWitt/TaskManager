@@ -42,6 +42,8 @@
 		79AD23E3162B1D9400D054DB /* DatePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79AD23E1162B1D9400D054DB /* DatePickerViewController.m */; };
 		79AD23E4162B1D9400D054DB /* DatePickerViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79AD23E2162B1D9400D054DB /* DatePickerViewController_iPad.xib */; };
 		79AD23E6162B1DBF00D054DB /* DatePickerViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79AD23E5162B1DBF00D054DB /* DatePickerViewController_iPhone.xib */; };
+		79AD23F6162B5E8C00D054DB /* icon-retina.png in Resources */ = {isa = PBXBuildFile; fileRef = 79AD23F4162B5E8C00D054DB /* icon-retina.png */; };
+		79AD23F7162B5E8C00D054DB /* icon-normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 79AD23F5162B5E8C00D054DB /* icon-normal.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +98,8 @@
 		79AD23E1162B1D9400D054DB /* DatePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DatePickerViewController.m; path = TaskManager/DatePickerViewController.m; sourceTree = "<group>"; };
 		79AD23E2162B1D9400D054DB /* DatePickerViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DatePickerViewController_iPad.xib; path = TaskManager/DatePickerViewController_iPad.xib; sourceTree = "<group>"; };
 		79AD23E5162B1DBF00D054DB /* DatePickerViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DatePickerViewController_iPhone.xib; path = TaskManager/DatePickerViewController_iPhone.xib; sourceTree = "<group>"; };
+		79AD23F4162B5E8C00D054DB /* icon-retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-retina.png"; sourceTree = "<group>"; };
+		79AD23F5162B5E8C00D054DB /* icon-normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-normal.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +121,8 @@
 		2E02D183162974B3003200E8 = {
 			isa = PBXGroup;
 			children = (
+				79AD23F4162B5E8C00D054DB /* icon-retina.png */,
+				79AD23F5162B5E8C00D054DB /* icon-normal.png */,
 				2E02D1BE16297814003200E8 /* CoreLocation.framework */,
 				2E02D1BC16297806003200E8 /* MapKit.framework */,
 				2E02D198162974B3003200E8 /* TaskManager */,
@@ -343,6 +349,8 @@
 				2E1980B7162AFE1A0088B0AC /* TaskCreateViewController_iPad.xib in Resources */,
 				79AD23E4162B1D9400D054DB /* DatePickerViewController_iPad.xib in Resources */,
 				79AD23E6162B1DBF00D054DB /* DatePickerViewController_iPhone.xib in Resources */,
+				79AD23F6162B5E8C00D054DB /* icon-retina.png in Resources */,
+				79AD23F7162B5E8C00D054DB /* icon-normal.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,6 +466,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TaskManager/TaskManager-Prefix.pch";
 				INFOPLIST_FILE = "TaskManager/TaskManager-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -469,6 +478,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TaskManager/TaskManager-Prefix.pch";
 				INFOPLIST_FILE = "TaskManager/TaskManager-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
