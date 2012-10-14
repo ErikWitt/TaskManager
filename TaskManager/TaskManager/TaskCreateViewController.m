@@ -11,7 +11,7 @@
 #import <MapKit/MapKit.h>
 #import "DatePickerViewController.h"
 
-@interface TaskCreateViewController() <DatepickerDelegate>
+@interface TaskCreateViewController ()<DatepickerDelegate>
 
 @property (nonatomic) IBOutlet UITextField* nameTextField;
 @property (nonatomic) IBOutlet UITextField* dateTextField;
@@ -29,8 +29,6 @@
 
 - (IBAction)closeKeyboard:(id)sender;
 
-
-- (IBAction)presentDatePickerView:(id)sender;
 
 @end
 
@@ -59,18 +57,15 @@
 {
     [super viewDidLoad];
     
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
-                                   initWithTarget:self
-                                   action:@selector(dismissKeyboard)];
-    [tap setCancelsTouchesInView:NO];
-    [self.view addGestureRecognizer:tap];
-    
-    
     UIBarButtonItem* saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveButtonClicked)];
     
     [self.navigationItem setRightBarButtonItem:saveButton];
     
     [self setupGesture];
+        
+    
+    UIView* dummyView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+    self.dateTextField.inputView = dummyView;
           
 }
 
@@ -93,15 +88,6 @@
     [self closeKeyboard:self.locationTextField];
 }
 
--(void) dismissKeyboard
-{
-    [self closeKeyboard:self.nameTextField];
-    [self closeKeyboard:self.dateTextField];
-    [self closeKeyboard:self.descriptionTextView];
-    [self closeKeyboard:self.homepageTextField];
-    [self closeKeyboard:self.locationTextField];
-}
-
 - (IBAction)closeKeyboard:(id)sender
 {
     [sender resignFirstResponder];
@@ -112,38 +98,19 @@
     self.taskName = self.nameTextField.text;
     self.taskDescription = self.descriptionTextView.text;
     self.taskUrl = [NSURL URLWithString:self.homepageTextField.text];
-
-    
-    Task* task = [[Task alloc] initWithName:self.taskName Date:self.taskDate Description:self.taskDescription Coordinates:self.taskLocation andUrl:self.taskUrl];
-    
-    [self.delegate taskCreated:task];
-    
-    
-    [self.navigationController popViewControllerAnimated:YES];
-}
-
-- (IBAction)closeKeyboard:(id)sender
-{
-    [sender resignFirstResponder];
 }
 
 
 -(IBAction)showDatePicker:(id)sender
 {
-    
-    
-    NSLog(@"SHOW DATEPUCKER");
     DatePickerViewController* datepicker = [[DatePickerViewController alloc] initWithDelegate:self];
     
     [self presentModalViewController:datepicker animated:YES];
-    
 }
-
+    
 -(void) delegate:(DatePickerViewController *)sender datePicked:(NSDate *)date
 {
-
-    self.taskDate = date;
-    
+   
     NSDateFormatter* format = [[NSDateFormatter alloc] init];
     [format setDateFormat:@"dd.MM.yyyy"];
     
@@ -151,8 +118,10 @@
     
     [self.dateTextField setText:formatiertesDatum];
     
+    [self closeKeyboard:self.dateTextField];
     
-
 }
+
+
 
 @end
