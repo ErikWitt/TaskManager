@@ -37,10 +37,10 @@
 - (TaskCreateViewController*) initWithDelegate: (id<TaskCreateViewControllerDelegate>) delegate
 {
     NSString* xibName;
-     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
-     {
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
+    {
          xibName = @"TaskCreateViewController_iPhone";
-     }
+    }
     else
     {
         xibName = @"TaskCreateViewController_iPad";
@@ -61,7 +61,7 @@
     [self.navigationItem setRightBarButtonItem:saveButton];
     
     [self setupGesture];
-    
+          
 }
 
 -(void) setupGesture
@@ -106,6 +106,9 @@
 
 -(IBAction)showDatePicker:(id)sender
 {
+    
+    
+    NSLog(@"SHOW DATEPUCKER");
     DatePickerViewController* datepicker = [[DatePickerViewController alloc] initWithDelegate:self];
     
     [self presentModalViewController:datepicker animated:YES];
@@ -116,6 +119,15 @@
 {
 
     self.taskDate = date;
+    
+    NSDateFormatter* format = [[NSDateFormatter alloc] init];
+    [format setDateFormat:@"dd.MM.yyyy"];
+    
+    NSString* formatiertesDatum = [format stringFromDate:date];
+    
+    [self.dateTextField setText:formatiertesDatum];
+    
+    
 
 }
 

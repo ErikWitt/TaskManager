@@ -24,11 +24,11 @@
     NSString* xibName;
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
     {
-        xibName = @"TaskCreateViewController_iPhone";
+        xibName = @"DatePickerViewController_iPhone";
     }
     else
     {
-        xibName = @"TaskCreateViewController_iPad";
+        xibName = @"DatePickerViewController_iPad";
     }
     
     self = [self initWithNibName:xibName bundle:nil];
