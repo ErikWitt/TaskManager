@@ -9,10 +9,12 @@
 #import "TaskViewController.h"
 #import "Task.h"
 #import "TaskDetailViewController.h"
+#import "TaskCreateViewController.h"
 
-@interface TaskViewController ()<UITableViewDataSource, UITableViewDelegate>
+@interface TaskViewController ()<UITableViewDataSource, UITableViewDelegate, TaskCreateViewControllerDelegate>
 
 @property (nonatomic) NSMutableArray* tasks;
+@property (nonatomic) IBOutlet UITableView* taskTableView;
 
 @end
 
@@ -30,6 +32,12 @@
     Task* task1 = [[Task alloc] initWithName:@"Jochen anrufen" Date:[NSDate date] Description:@"Peter sollte ziemlich bald angerufen werden" Coordinates: location andUrl:[NSURL URLWithString:@"http://www.google.com"]];
     
     self.tasks = [NSMutableArray arrayWithObjects:task, task1, nil];
+    
+    
+    
+    UIBarButtonItem* plusButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemAdd target:self action:@selector(plusButtonClicked)];
+    
+    [self.navigationItem setRightBarButtonItem:plusButton];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -64,6 +72,20 @@
 - (void) taskDidChange:(Task *)task
 {
     assert(0&&"You must override this Method");
+}
+
+- (void) plusButtonClicked
+{
+    TaskCreateViewController* controller = [[TaskCreateViewController alloc] initWithDelegate:self];
+    
+    [self.navigationController pushViewController:controller animated:YES];
+    //[self presentModalViewController:controller animated:YES];
+}
+
+- (void) taskCreated:(Task *)task
+{
+    [self.tasks addObject:task];
+    [self.taskTableView reloadData];
 }
 
 @end
