@@ -38,6 +38,8 @@
 		2E1980B4162AFDF40088B0AC /* TaskCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E1980B2162AFDF40088B0AC /* TaskCreateViewController.m */; };
 		2E1980B5162AFDF40088B0AC /* TaskCreateViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E1980B3162AFDF40088B0AC /* TaskCreateViewController_iPhone.xib */; };
 		2E1980B7162AFE1A0088B0AC /* TaskCreateViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E1980B6162AFE1A0088B0AC /* TaskCreateViewController_iPad.xib */; };
+		2E19810E162C5E860088B0AC /* Data.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2E19810D162C5E860088B0AC /* Data.plist */; };
+		2E198113162C60E00088B0AC /* TaksStockService.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E198112162C60E00088B0AC /* TaksStockService.m */; };
 		79AD23D8162B1A2A00D054DB /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 79AD23D7162B1A2A00D054DB /* TPKeyboardAvoidingScrollView.m */; };
 		79AD23E3162B1D9400D054DB /* DatePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79AD23E1162B1D9400D054DB /* DatePickerViewController.m */; };
 		79AD23E4162B1D9400D054DB /* DatePickerViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79AD23E2162B1D9400D054DB /* DatePickerViewController_iPad.xib */; };
@@ -92,6 +94,9 @@
 		2E1980B2162AFDF40088B0AC /* TaskCreateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskCreateViewController.m; sourceTree = "<group>"; };
 		2E1980B3162AFDF40088B0AC /* TaskCreateViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskCreateViewController_iPhone.xib; sourceTree = "<group>"; };
 		2E1980B6162AFE1A0088B0AC /* TaskCreateViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskCreateViewController_iPad.xib; sourceTree = "<group>"; };
+		2E19810D162C5E860088B0AC /* Data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Data.plist; sourceTree = "<group>"; };
+		2E198111162C60E00088B0AC /* TaksStockService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaksStockService.h; sourceTree = "<group>"; };
+		2E198112162C60E00088B0AC /* TaksStockService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaksStockService.m; sourceTree = "<group>"; };
 		79AD23D6162B1A2A00D054DB /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
 		79AD23D7162B1A2A00D054DB /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
 		79AD23E0162B1D9400D054DB /* DatePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DatePickerViewController.h; path = TaskManager/DatePickerViewController.h; sourceTree = "<group>"; };
@@ -152,6 +157,7 @@
 		2E02D198162974B3003200E8 /* TaskManager */ = {
 			isa = PBXGroup;
 			children = (
+				2E198110162C60450088B0AC /* Services */,
 				79AD23D2162B199800D054DB /* CustomUI */,
 				2E02D1BB1629770A003200E8 /* Model */,
 				2E02D1C016297C21003200E8 /* Controller */,
@@ -261,6 +267,16 @@
 			name = TaskCreateViewController;
 			sourceTree = "<group>";
 		};
+		2E198110162C60450088B0AC /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				2E19810D162C5E860088B0AC /* Data.plist */,
+				2E198111162C60E00088B0AC /* TaksStockService.h */,
+				2E198112162C60E00088B0AC /* TaksStockService.m */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
 		79AD23D2162B199800D054DB /* CustomUI */ = {
 			isa = PBXGroup;
 			children = (
@@ -351,6 +367,7 @@
 				79AD23E6162B1DBF00D054DB /* DatePickerViewController_iPhone.xib in Resources */,
 				79AD23F6162B5E8C00D054DB /* icon-retina.png in Resources */,
 				79AD23F7162B5E8C00D054DB /* icon-normal.png in Resources */,
+				2E19810E162C5E860088B0AC /* Data.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,6 +392,7 @@
 				2E1980B4162AFDF40088B0AC /* TaskCreateViewController.m in Sources */,
 				79AD23D8162B1A2A00D054DB /* TPKeyboardAvoidingScrollView.m in Sources */,
 				79AD23E3162B1D9400D054DB /* DatePickerViewController.m in Sources */,
+				2E198113162C60E00088B0AC /* TaksStockService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,11 +10,14 @@
 #import "Task.h"
 #import "TaskDetailViewController.h"
 #import "TaskCreateViewController.h"
+#import "TaksStockService.h"
 
 @interface TaskViewController ()<UITableViewDataSource, UITableViewDelegate, TaskCreateViewControllerDelegate>
 
 @property (nonatomic) NSMutableArray* tasks;
 @property (nonatomic) IBOutlet UITableView* taskTableView;
+
+@property (nonatomic) TaksStockService* taskStockService;
 
 @end
 
@@ -25,15 +28,17 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    CLLocationCoordinate2D location = {53.599127, 9.93257}; //Informatikum
+//    CLLocationCoordinate2D location = {53.599127, 9.93257}; //Informatikum
+//    
+//    Task* task = [[Task alloc] initWithName:@"Peter anrufen" Date:[NSDate date] Description:@"Peter sollte ziemlich bald angerufen werden" Coordinates: location andUrl:[NSURL URLWithString:@"http://www.google.com"]];
+//
+//    Task* task1 = [[Task alloc] initWithName:@"Jochen anrufen" Date:[NSDate date] Description:@"Peter sollte ziemlich bald angerufen werden" Coordinates: location andUrl:[NSURL URLWithString:@"http://www.google.com"]];
+//    
+//    self.tasks = [NSMutableArray arrayWithObjects:task, task1, nil];
+//    
     
-    Task* task = [[Task alloc] initWithName:@"Peter anrufen" Date:[NSDate date] Description:@"Peter sollte ziemlich bald angerufen werden" Coordinates: location andUrl:[NSURL URLWithString:@"http://www.google.com"]];
-
-    Task* task1 = [[Task alloc] initWithName:@"Jochen anrufen" Date:[NSDate date] Description:@"Peter sollte ziemlich bald angerufen werden" Coordinates: location andUrl:[NSURL URLWithString:@"http://www.google.com"]];
-    
-    self.tasks = [NSMutableArray arrayWithObjects:task, task1, nil];
-    
-    
+    self.taskStockService = [[TaksStockService alloc] init];
+    self.tasks = self.taskStockService.tasks;
     
     [self.navigationItem setTitle:@"Tasks"];
     
