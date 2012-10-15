@@ -35,6 +35,8 @@
     
     
     
+    [self.navigationItem setTitle:@"Tasks"];
+    
     UIBarButtonItem* plusButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemAdd target:self action:@selector(plusButtonClicked)];
     
     [self.navigationItem setRightBarButtonItem:plusButton];
@@ -79,7 +81,6 @@
     TaskCreateViewController* controller = [[TaskCreateViewController alloc] initWithDelegate:self];
     
     [self.navigationController pushViewController:controller animated:YES];
-    //[self presentModalViewController:controller animated:YES];
 }
 
 - (void) taskCreated:(Task *)task

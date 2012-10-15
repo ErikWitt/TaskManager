@@ -25,7 +25,6 @@
 {
     TaskDetailViewControllerPhone* taskDetailViewController = [[TaskDetailViewControllerPhone alloc] initWithTask: task];
     
-    [self.navigationController popToRootViewControllerAnimated:NO];
     [self.navigationController pushViewController:taskDetailViewController animated:YES];
 }
 

@@ -41,6 +41,8 @@
 {
     [super viewDidLoad];
     [self.webView loadRequest:[NSURLRequest requestWithURL:self.url]];
+    
+    [self.navigationItem setTitle:@"Homepage"];
 }
 
 @end

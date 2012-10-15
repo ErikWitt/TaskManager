@@ -45,6 +45,8 @@
 
     [self displayTask];
     
+    [self.navigationItem setTitle:@"Details"];
+    
     UIBarButtonItem* mapButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(mapButtonClicked)];
     
     [self.navigationItem setRightBarButtonItem:mapButton];

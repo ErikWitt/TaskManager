@@ -120,6 +120,8 @@
     {
         [self presentPin];
     }
+    
+    [self.navigationItem setTitle:@"Location"];
 }
 
 

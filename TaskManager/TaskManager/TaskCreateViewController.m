@@ -66,6 +66,8 @@
     [self setupGesture];
         
     
+    [self.navigationItem setTitle:@"new Task"];
+    
     // Keyboard abschalten für textfelder
     UIView* dummyView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
     self.dateTextField.inputView = dummyView;
@@ -107,6 +109,7 @@
     
     
     [self.delegate taskCreated:self.task];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 
