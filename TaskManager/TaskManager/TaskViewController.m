@@ -14,7 +14,6 @@
 
 @interface TaskViewController ()<UITableViewDataSource, UITableViewDelegate, TaskCreateViewControllerDelegate>
 
-@property (nonatomic) NSMutableArray* tasks;
 @property (nonatomic) IBOutlet UITableView* taskTableView;
 
 @property (nonatomic) TaksStockService* taskStockService;
@@ -38,7 +37,6 @@
 //    
     
     self.taskStockService = [[TaksStockService alloc] init];
-    self.tasks = self.taskStockService.tasks;
     
     [self.navigationItem setTitle:@"Tasks"];
     
@@ -49,12 +47,12 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.tasks count];
+    return self.taskStockService.numberOfTasks;
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Task* task = [self.tasks objectAtIndex:indexPath.row];
+    Task* task = [self.taskStockService.tasks objectAtIndex:indexPath.row];
     
     UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"standard"];
     if(cell == nil) {
@@ -70,7 +68,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Task* selectedTask = [self.tasks objectAtIndex:indexPath.row];
+    Task* selectedTask = [self.taskStockService.tasks objectAtIndex:indexPath.row];
     
     [self taskDidChange:selectedTask];
     
@@ -93,9 +91,9 @@
  
     if(task != nil)
     {
-        [self.tasks addObject:task];
+        //[self.tasks addObject:task];
+        [self.taskStockService addTask:task];
         [self.taskTableView reloadData];
-        
         [self taskDidChange:task];
     }
 

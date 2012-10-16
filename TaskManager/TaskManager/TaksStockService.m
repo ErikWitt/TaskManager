@@ -13,6 +13,8 @@
 
 @interface TaksStockService()
 
+@property (nonatomic, readwrite) NSMutableArray* tasks;
+
 @end
 
 @implementation TaksStockService
@@ -64,13 +66,8 @@
         CLLocationCoordinate2D location = {x, y};
         
         Task* task = [[Task alloc] initWithName:name Date:date Description:description Coordinates:location andUrl:url];
-        
-        
-        NSLog(@"Der Task: %@", task);
 
         [self.tasks addObject:task];
-        NSLog(@"Das Array: %@", self.tasks);
-
     }
 }
 
@@ -87,18 +84,23 @@
 
 - (NSArray*) generateArrayFromTasks
 {
-    NSMutableArray* result;
+    NSLog(@"Methode generateArray Aufgerufen");
+    NSMutableArray* result = [[NSMutableArray alloc] init];
     
     for (Task* task in self.tasks)
     {
-        NSArray* data = [NSArray arrayWithObjects:task.name, task.date, task.description, task.url.absoluteString, task.coodinates.latitude, task.coodinates.longitude , nil];
+        NSNumber* x = [NSNumber numberWithDouble: task.coodinates.latitude];
+        NSNumber* y = [NSNumber numberWithDouble: task.coodinates.longitude];        
         
-        NSArray* keys = [NSArray arrayWithObjects:@"name", @"date", @"description", @"homepage", @"coordinateX", @"coordinateY" , nil];
+        NSArray* data = [NSArray arrayWithObjects:task.name, task.date, task.description, task.url.absoluteString, x, y, nil];
+        
+        NSArray* keys = [NSArray arrayWithObjects:@"name", @"date", @"description", @"homepage", @"coordinateX", @"coordinateY", nil];
         
         NSDictionary* dictionary = [NSDictionary dictionaryWithObjects:data forKeys:keys];
         
         [result addObject:dictionary];
     }
+    NSLog(@"Result am Ende:%@", result);
     
     return [NSArray arrayWithArray:result];
 }
@@ -110,12 +112,17 @@
     
     if([array writeToFile:path atomically: YES])
     {
-        NSLog(@"write successful");
+        NSLog(@"write successful, Path: %@", path);
     }
     else
     {
         NSLog(@"write failed");
     }
+}
+
+- (int) numberOfTasks
+{
+    return [self.tasks count];
 }
 
 @end

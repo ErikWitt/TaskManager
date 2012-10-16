@@ -11,7 +11,9 @@
 
 @interface TaksStockService : NSObject
 
-@property (nonatomic) NSMutableArray* tasks;
+@property (nonatomic, readonly) NSMutableArray* tasks;
 
 - (void) addTask:(Task*) task;
+- (int) numberOfTasks;
+
 @end
