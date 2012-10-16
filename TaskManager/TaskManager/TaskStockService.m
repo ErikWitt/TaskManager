@@ -6,20 +6,20 @@
 //  Copyright (c) 2012 Erik Witt. All rights reserved.
 //
 
-#import "TaksStockService.h"
+#import "TaskStockService.h"
 #import "Task.h"
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 
-@interface TaksStockService()
+@interface TaskStockService()
 
 @property (nonatomic, readwrite) NSMutableArray* tasks;
 
 @end
 
-@implementation TaksStockService
+@implementation TaskStockService
 
-- (TaksStockService*) init
+- (TaskStockService*) init
 {
     self = [super init];
     if (self)
@@ -32,6 +32,9 @@
 
 - (void) loadTasksFromFile
 {
+
+    //NSLog(@"Loading Tasks");
+    
     [self generateTasksFromArray:[self readData]];
 }
 
@@ -83,8 +86,7 @@
 }
 
 - (NSArray*) generateArrayFromTasks
-{
-    NSLog(@"Methode generateArray Aufgerufen");
+{ 
     NSMutableArray* result = [[NSMutableArray alloc] init];
     
     for (Task* task in self.tasks)
@@ -100,7 +102,10 @@
         
         [result addObject:dictionary];
     }
-    NSLog(@"Result am Ende:%@", result);
+    
+
+   // NSLog(@"Result am Ende:%@", result);
+
     
     return [NSArray arrayWithArray:result];
 }
@@ -123,6 +128,19 @@
 - (int) numberOfTasks
 {
     return [self.tasks count];
+}
+
+
+- (void) removeTask:(Task *)task
+{
+    [self.tasks removeObject:task];
+    [self saveTasksToFile];
+}
+
+- (void) removeTaskAt:(int) index
+{
+    [self.tasks removeObjectAtIndex:index];
+    [self saveTasksToFile];
 }
 
 @end

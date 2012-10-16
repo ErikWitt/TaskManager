@@ -24,7 +24,6 @@
     
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
     {
-        #define IPHONE ;
         [self setUpPhone];
     }
     else

@@ -9,11 +9,13 @@
 #import <Foundation/Foundation.h>
 #import "Task.h"
 
-@interface TaksStockService : NSObject
+@interface TaskStockService : NSObject
 
 @property (nonatomic, readonly) NSMutableArray* tasks;
 
 - (void) addTask:(Task*) task;
+- (void) removeTask:(Task*) task;
+- (void) removeTaskAt:(int) index;
 - (int) numberOfTasks;
 
 @end

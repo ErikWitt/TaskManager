@@ -10,13 +10,13 @@
 #import "Task.h"
 #import "TaskDetailViewController.h"
 #import "TaskCreateViewController.h"
-#import "TaksStockService.h"
+#import "TaskStockService.h"
 
 @interface TaskViewController ()<UITableViewDataSource, UITableViewDelegate, TaskCreateViewControllerDelegate>
 
 @property (nonatomic) IBOutlet UITableView* taskTableView;
 
-@property (nonatomic) TaksStockService* taskStockService;
+@property (nonatomic) TaskStockService* taskStockService;
 
 @end
 
@@ -26,17 +26,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    
-//    CLLocationCoordinate2D location = {53.599127, 9.93257}; //Informatikum
-//    
-//    Task* task = [[Task alloc] initWithName:@"Peter anrufen" Date:[NSDate date] Description:@"Peter sollte ziemlich bald angerufen werden" Coordinates: location andUrl:[NSURL URLWithString:@"http://www.google.com"]];
-//
-//    Task* task1 = [[Task alloc] initWithName:@"Jochen anrufen" Date:[NSDate date] Description:@"Peter sollte ziemlich bald angerufen werden" Coordinates: location andUrl:[NSURL URLWithString:@"http://www.google.com"]];
-//    
-//    self.tasks = [NSMutableArray arrayWithObjects:task, task1, nil];
-//    
-    
-    self.taskStockService = [[TaksStockService alloc] init];
+       
+    self.taskStockService = [[TaskStockService alloc] init];
     
     [self.navigationItem setTitle:@"Tasks"];
     
@@ -91,12 +82,20 @@
  
     if(task != nil)
     {
-        //[self.tasks addObject:task];
         [self.taskStockService addTask:task];
         [self.taskTableView reloadData];
         [self taskDidChange:task];
     }
 
+}
+
+- (void)tableView:(UITableView *)tv commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete)
+    {
+        [self.taskStockService removeTaskAt:indexPath.row];
+        [self.taskTableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }
 }
 
 @end
