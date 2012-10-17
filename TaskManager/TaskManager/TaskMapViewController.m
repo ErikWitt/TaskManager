@@ -10,7 +10,7 @@
 #import <MapKit/MapKit.h>
 #import "Task.h"
 
-@interface TaskMapViewController ()
+@interface TaskMapViewController ()<UIAlertViewDelegate>
 
 @property (nonatomic) IBOutlet MKMapView* mapView;
 @property (nonatomic) Task* task;
@@ -134,18 +134,38 @@
     CLLocationCoordinate2D touchMapCoordinate =
     [self.mapView convertPoint:touchPoint toCoordinateFromView:self.mapView];
     
-    MKPointAnnotation *annot = [[MKPointAnnotation alloc] init];
+    MKPointAnnotation* annot = [[MKPointAnnotation alloc] init];
     annot.coordinate = touchMapCoordinate;
     [self.mapView addAnnotation:annot];
     
-    // Zeige Fenster
     
+    // Zeigt bestaetigungsfenster
+    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Bestätigung"
+                        message:@"Gewählte Position benutzen?" delegate:self cancelButtonTitle:@"Ja" otherButtonTitles:@"Nein", nil];
     
-    
-    [self.delegate mapView:self gotCoordinate:annot.coordinate];
-    
-    [self dismissModalViewControllerAnimated:YES];
+    [alert show];
 
+}
+
+-(void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    
+    if(buttonIndex == 0) // JA BUTTON
+    {
+        
+        MKPointAnnotation* annot = [[self.mapView annotations] objectAtIndex:0]; // es gibt nur eine Annotation
+        
+        [self.delegate mapView:self gotCoordinate:annot.coordinate];
+        
+        [self dismissModalViewControllerAnimated:YES];
+    }
+    else // NEIN BUTTON
+    {
+        
+        [self.mapView removeAnnotations:[self.mapView annotations]];
+    }
+    
+    
 }
 
 @end
