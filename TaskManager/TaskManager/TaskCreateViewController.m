@@ -19,6 +19,7 @@
 @property (nonatomic) IBOutlet UITextView* descriptionTextView;
 @property (nonatomic) IBOutlet UITextField* homepageTextField;
 @property (nonatomic) IBOutlet UITextField* locationTextField;
+- (IBAction) saveButtonClicked;
 
 
 
@@ -99,7 +100,7 @@
     [sender resignFirstResponder];
 }
 
-- (void) saveButtonClicked
+- (IBAction) saveButtonClicked 
 {
     self.task.name = self.nameTextField.text;
     self.task.description = self.descriptionTextView.text;
@@ -116,7 +117,9 @@
 -(IBAction)showDatePicker:(id)sender
 {
     DatePickerViewController* datepicker = [[DatePickerViewController alloc] initWithDelegate:self];
+
     
+//    [self presentViewController:datepicker animated:YES completion:nil];
     [self presentModalViewController:datepicker animated:YES];
 }
 
