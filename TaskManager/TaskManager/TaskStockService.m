@@ -31,10 +31,7 @@
 }
 
 - (void) loadTasksFromFile
-{
-
-    //NSLog(@"Loading Tasks");
-    
+{    
     [self generateTasksFromArray:[self readData]];
 }
 
@@ -44,7 +41,7 @@
     NSString * path = [docFolder stringByAppendingPathComponent:@"Data.plist"];
     NSArray *arrayFromPlist = [NSArray arrayWithContentsOfFile:path] ;
     
-    if([arrayFromPlist count] == 0) // kann man hier auch auf nil testen?
+    if([arrayFromPlist count] == 0)
     {
         path = [[NSBundle mainBundle] pathForResource:@"Data" ofType:@"plist"];
         arrayFromPlist = [NSArray arrayWithContentsOfFile:path] ;
@@ -56,8 +53,7 @@
 - (void) generateTasksFromArray: (NSArray*) data
 {
     for(id key in data)
-    {
-        
+    {        
         NSDictionary* dictionary = (NSDictionary*)key;
 
         NSString* name = [dictionary objectForKey:@"name"];
@@ -102,16 +98,12 @@
         
         [result addObject:dictionary];
     }
-    
 
-   // NSLog(@"Result am Ende:%@", result);
-
-    
     return [NSArray arrayWithArray:result];
 }
 
--(void) writeData:(NSArray*) array{
-    
+-(void) writeData:(NSArray*) array
+{    
     NSString* docFolder = [NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     NSString * path = [docFolder stringByAppendingPathComponent:@"Data.plist"];
     

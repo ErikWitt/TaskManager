@@ -4,31 +4,39 @@
 <array>
 	<dict>
 		<key>name</key>
-		<string>Peter anrufen</string>
+		<string>OOSE - OKick-Off</string>
 		<key>date</key>
-		<date>2012-10-15T15:11:45Z</date>
+		<date>2012-10-26T10:45:00Z</date>
 		<key>description</key>
-		<string>Peter sollte schnellstmöglich angerufen werden.</string>
+		<string>Im Rahmen des OOSE-Projekts werden wir uns anhand einer durchgängigen Aufgabenstellung das Instrumentarium für die Entwicklung großer objektorientierter Softwaresysteme erarbeiten. In diesem Semester steht insbesondere die Fragestellung, wie mobile Frontends (iPad) in eine Anwendungsumgebung integriert werden können, im Mittelpunkt.
+
+Den fachlichen Gegenstandsbereich bilden Anwendungsfälle aus der Praxis der T-Systems Multimedia Solutions (MMS). Experten der T-Systems MMS begleiten uns bei der Durchdringung der fachlichen Aufgabenstellung.
+
+Lösungsvorschläge werden unter Verwendung der agilen Entwicklungsmethode Scrum entwickelt.</string>
 		<key>homepage</key>
-		<string>http://www.google.de</string>
+		<string>http://swt-www.informatik.uni-hamburg.de/fileadmin/swt-redaktion/pdf_dateien/OOSE_WS1213_Poster_iPad.pdf</string>
 		<key>coordinateX</key>
-		<real>53.599127</real>
+		<real>53.5678044046206</real>
 		<key>coordinateY</key>
-		<real>9.93257</real>
+		<real>9.98561896973936</real>
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Jochen anrufen</string>
+		<string>Fifa 13 kaufen</string>
 		<key>date</key>
-		<date>2012-10-15T15:11:45Z</date>
+		<date>2012-10-29T18:30:00Z</date>
 		<key>description</key>
-		<string>Jochen sollte schnellstmöglich angerufen werden.</string>
+		<string>Mit FIFA 13 kommt das umfangreichste Spiel in der Geschichte der Serie. Die Verbesserungen in Bereichen wie künstliche Intelligenz, Dribbling, Ballkontrolle und Kollisionen machen den Kampf um den Ball so spannend wie nie, bieten im Angriff ungeahnte Freiheiten, ermöglichen kreative Spielzüge und fangen die Dramatik des echten Fußballs ein. 
+
+ 
+Zum Vergrößern bitte Bild anklicken.
+Das neue Feature Attacking Intelligence versieht Spieler mit der bislang ausgereiftesten künstlichen Intelligenz. Die Akteure auf dem Platz analysieren den Raum besser, setzen die Defensive stärker und intelligenter unter Druck und antizipieren Spielzüge akkurater. Jetzt zählt jede einzelne Ballberührung – dank dem vollständigsten und intuitivsten Dribblingsystem, das die Serie je gesehen hat. Das Feature Complete Dribbling wurde vom besten Spieler der Welt, Lionel Messi, inspiriert. In der Offensive können Spieler sich dem Gegner stellen und mittels einer Kombination aus Dribbling und echter 360°-Bewegungsfreiheit kreativer und gefährlicher in Eins-zu-eins-Situationen gehen. Die FIFA 13 1st Touch Ball Control weist neue Wege bei der Ballbehandlung: die nahezu perfekte Kontrolle bei jedem Spieler in jeder Situation gibt es nicht mehr. So haben Verteidiger mehr Möglichkeiten, an den Ball zu kommen. Die zweite Generation der preisgekrönten Physik-Engine erweitert das körperliche Element auf die Zweikämpfe ohne Ball. Verteidiger können sich mit Schieben und Zerren Positionsvorteile schaffen, mit ihrem Gewicht und ihrem Einsatz den Gegner zu Fehlern zwingen und Entscheidungen schon treffen, bevor der Ball kommt. Mit FIFA 13 Tactical Free Kicks bieten sich neue Möglichkeiten, gefährliche und unberechenbare Freistöße einzustudieren. Bis zu drei Angreifer kann man um den Ball gruppieren und den Gegner verwirren – mit Täuschungsmanövern und erweiterten Passmöglichkeiten.</string>
 		<key>homepage</key>
-		<string>http://www.heise.de</string>
+		<string>http://www.ea.com/de/fifa-13</string>
 		<key>coordinateX</key>
-		<real>53.599127</real>
+		<real>53.7408217584448</real>
 		<key>coordinateY</key>
-		<real>9.93257</real>
+		<real>9.709399993038261</real>
 	</dict>
 </array>
 </plist>
